@@ -1,0 +1,32 @@
+{
+  "name": "corypulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Wi-Fi business management platform for MikroTik hotspot operators",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,ui -c green,cyan \"node --watch server/index.js\" \"vite\"",
+    "dev:db": "node scripts/dev-db.js",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "seed:scale": "node scripts/seed-scale.js",
+    "ingest:smoke": "node scripts/radius-smoke.js",
+    "loadtest": "node scripts/loadtest.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@electric-sql/pglite-socket": "^0.2.19",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.3.5"
+  }
+}
